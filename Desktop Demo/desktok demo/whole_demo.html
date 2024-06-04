@@ -1,0 +1,1038 @@
+<html>
+  <title>Desktop Demo</title>
+  <head>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+        font-family: 'poppins',sans-serif;
+        box-sizing: border-box;
+    }
+    :root{
+        --body-color:#efefef;
+        --nav-color:#1876f2;
+        --bg-color:#fff;
+        
+    }
+    .dark-theme{
+        --body-color:linear-gradient(to right ,rgb(249, 220, 225),skyblue);
+        --nav-color:linear-gradient(to right,rgb(241, 241, 159),rgb(115, 115, 242),rgb(155, 252, 223));
+        --bg-color:linear-gradient(to right ,rgb(243, 200, 207),rgb(147, 213, 239));
+    }
+    
+    body{
+    
+        background:var(--body-color);
+        transition: background 0.3s;
+    }
+    nav{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        background:var(--nav-color);
+        position:sticky;
+        top: 0;
+        z-index: 100;
+       
+    }
+    .logo{
+        width:210px;
+        
+        border-radius: 10px;
+        
+    }
+    .nav-left, .nav-right{
+        display:flex;
+        align-items: center;
+    
+    
+    }
+    .nav-left ul li {
+        list-style: none;
+        display:inline-block;
+    
+    }
+    .nav-left ul li img{
+        width:38px;
+        margin:0 15px;
+        border-radius: 10px;
+    
+    }
+    .nav-left ul li img:hover{
+        background-color: #1885f2;
+        border-radius: 7px;
+    }
+    .icon img{
+        width:40px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .icon{
+        margin-left: 30px;
+        margin-right: 15px;
+    }
+    .search-box{
+        background: #efefef;
+        width:340px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+    }
+    .search-box img {
+    width:18px;
+    }
+    .search-box input{
+        width: 100%;
+        background: transparent;
+        padding: 10px;
+        outline: none;
+        border:0;
+    
+    }
+    .online{
+        position:relative;
+    }
+    .online::after{
+        content: '';
+        width:7px;
+        border:2px solid #efff;
+        height:7px;
+        border-radius: 50%;
+        background:green;
+        position:absolute;
+        top:0;
+        right:0;
+    
+    }
+    .container{
+        display: flex;
+        justify-content: space-between;
+        padding: 13px 5%;
+    
+    }
+    .left-sidebar{
+        
+        flex-basis: 25%;
+        position: sticky;
+        top:70px;
+        align-self: flex-start;
+       
+        
+    }
+    .right-sidebar{
+       background: var(--bg-color);
+        flex-basis: 25%;
+        position: sticky;
+        top:70px;
+        align-self: flex-start;
+        padding: 20px;
+        border-radius: 4px;
+        color:#626262;
+    
+        
+    }
+    .main-content{
+        flex-basis: 47%;
+    
+    }
+    .imp-links a, .shortcuts-links a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    color:#232222;
+    width:fit-content;
+    
+    }
+    .imp-links a img{
+        width:25px;
+        margin-right: 15px;
+        border-radius: 5px;
+    }
+    .imp-links a:last-child{
+        color:#0080ff;
+    }
+    .imp-links{
+         border-bottom: 1px solid grey;
+    
+    }
+    .shortcuts-links a img{
+        width:40px;
+        border-radius: 4px;
+        margin-right: 15px;
+    }
+    .shortcuts-links p{
+        margin: 25px 0;
+        color:#626262;
+        font-weight: 500;
+    }
+    .sidebar-title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+    
+    }
+    .right-sidebar h4{
+        font-weight: 600;
+        font-size:16px;
+    }
+    .sidebar-title a{
+        text-decoration: none;
+        color:#1876f2;
+        font-size: 12p;
+    }
+    .event{
+        display: flex;
+        font-size: 14px;
+        margin-bottom: 20px;
+    
+    }
+    .left-event{
+        border-radius: 10px;
+        height:65px;
+        width:65px;
+        margin-right: 15px;
+        padding-top: 10px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .event p{
+        font-size: 12px;
+    }
+    .event a{
+        font-size: 12px;
+        color:#1876f2;
+        text-decoration:none ;
+    }
+    .left-event span{
+        position: absolute;
+        bottom: 0;
+        left:0;
+        width:100%;
+        background:linear-gradient(to right,yellow,red,blue);
+        color:#fff;
+        font-size: 10px;
+        padding:4px 0;
+    }
+    .sidebar-ads{
+        width:100%;
+        margin-bottom: 20px;
+        border-radius: 4px;
+    
+    }
+    .online-list{
+        display:flex;
+        align-items: center;
+        margin-bottom: 20px;
+    
+    }
+    .online-list .online img{
+        width: 40px;
+        border-radius: 50%;
+    }
+    .online-list .online{
+        border-radius: 50%;
+        margin-right: 15px;
+    
+    }
+    .online-list .online::after{
+        top: unset;
+        bottom: 4px;
+    }
+    .story-gallery{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        
+    }
+    .story{
+        flex-basis: 18%;
+        padding-top: 32%;
+        position:relative;
+        border-radius: 10px;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .story img{
+        position: absolute;
+        width: 45px;
+        border-radius: 50%;
+        top:10px;
+        left:10px;
+        border: 2px solid #626262;
+        border-color:rgb(240, 8, 221);
+    }
+    .story p{
+        position: absolute;
+        bottom: 10px;
+        width:100%;
+        text-align: center;
+        color:white;
+        font-size: 14px;
+    }
+    .story1{
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)),url("status-1.png");
+    }
+    .story2{
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)),url("status-2.png");
+    }
+    .story2:hover{
+        
+    }
+    .story3{
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)),url("status-3.png");
+    }
+    .story4{
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)),url("status-4.png");
+    }
+    .story5{
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)),url("status-5.png");
+    }
+    .story.story1 img {
+        top:unset;
+        left:50%;
+        bottom:40px;
+        transform: translateX(-50%);
+        border:0;
+        width:35px;
+    }
+    .post-write{
+        width:100%;
+        background:var(--bg-color);
+        border-radius: 6px;
+        padding:20px;
+        color:#626262;
+    }
+    .user-profile{
+        display:flex;
+        align-items: center;
+    }
+    .user-profile img {
+        width:55px;
+        border-radius:50%;
+    margin-right: 10px;
+    
+    
+    
+    
+    }
+    .user-profile p{
+        margin-bottom: -5px;
+        font-weight: 500;
+        color:#626262;
+    }
+    .user-profile small{
+        font-size: 12px;
+    
+    }
+    .post-input{
+        padding-left:55px;
+        padding-top: 20px;
+    
+    }
+    .post-input textarea{
+        width:100%;
+        border:0;
+        outline:0;
+        border-bottom: 1px solid #ccc;
+        background: transparent;
+    
+    }
+    .add-post-links{
+        display:flex;
+        margin-top: 10px;
+    
+    }
+    .add-post-links a{
+        text-decoration: none;
+        display:flex;
+        align-items: center;
+        color:#626262;
+        margin-right: 30px;
+        font-size: 13px;
+    
+    }
+    .add-post-links a img{
+        width:20px;
+        margin-right: 10px;
+    
+    }
+    .post-container{
+        width:100%;
+        background:var(--bg-color);
+        border-radius: 6px;
+        padding: 20px;
+        color:#626262;
+        margin: 20px 0;
+    }
+    .user-profile span{
+        font-size: 13px;
+        color:#9a9a9a;
+    }
+    .post-text{
+        color:#626262;
+        margin:15px 0;
+        font-size: 15px;
+    }
+    .post-img{
+        width:100%;
+        border-radius: 4px;
+        margin-bottom: 5px;
+    }
+    .post-row{
+        display: flex;
+        align-items: center;
+    justify-content: space-between;
+    
+    }
+    .activity-icons div img{
+        width:18px;
+        margin-right: 10px;
+    
+    }
+    .activity-icons div{
+        display:inline-flex;
+        margin-right: 30px;
+        align-items: center;
+    }
+    .post-profile-icon{
+        display: flex;
+        align-items: center;
+    }
+    .post-profile-icon img{
+        width:20px;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+    .c1:hover{
+        color:rgb(251, 0, 255);
+        font-size: 30px;
+    
+    }
+    .r1:hover{
+        top:unset;
+        left:50%;
+        bottom:40px;
+        transform: translateX(-50%);
+        border:0;
+        width:25px;
+    }
+    .c2:hover{
+        color:rgb(251, 0, 255);
+        font-size: 30px;
+    
+    }
+    .c2 {
+        background: linear-gradient(to right, violet, indigo, blue, green, rgb(12, 255, 223), orange, red);
+        -webkit-background-clip: text;
+        color: transparent;
+        display: inline-block;
+        animation: rainbowAnimation 10s linear infinite;
+    }
+    
+    @keyframes c2 {
+        0% {
+            background-position: 0% 50%;
+        }
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+    .c3{
+        color:rgb(0, 0, 0);
+        width:70px;
+        border-radius: 5px;
+        border: none;
+        
+        
+    }
+    .c3:hover {
+        background: linear-gradient(to right, violet, indigo, blue, green, rgb(12, 255, 223), orange, red);
+        
+        color: transparent;
+        display: inline-block;
+        animation: rainbowAnimation 10s linear infinite;
+        color:white;
+        width:70px;
+        border-radius: 5px;
+        
+    }
+    
+    @keyframes c2 {
+        0% {
+            background-position: 0% 50%;
+        }
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+    .load-more{
+        display: block;
+        margin:auto;
+        cursor: pointer;
+        padding:5px 10px;
+        border:1px solid #9a9a9a;
+        color:#626262;
+        background: transparent;
+        border-radius: 4px;
+    
+    
+    }
+    .load-more:hover{
+        background: linear-gradient(to right,pink,skyblue,rgb(240, 148, 148));
+    }
+    .footer{
+        text-align: center;
+        color:#9a9a9a;
+        padding:10px 0 20px;
+        font-size: 13px;
+    }
+    .settings-menu{
+        position: absolute;
+        width:90%;
+        max-width: 350px;
+        max-height: 0;
+        background:var(--bg-color);
+        box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        border-radius: 4px;
+        overflow: hidden;
+        top: 108%;
+        right: 5%;
+        transition: max-height 0.3s;
+    }
+    .settings-menu-height{
+        max-height: 450px;
+    }
+    .user-profile a{
+        font-size: 12px;
+        color:#1876f2;
+        text-decoration: none;
+    }
+    .settings-menu-inner{
+        padding:20px;
+    }
+    .settings-menu hr{
+        border:0;
+        height:1px;
+        background: #9a9a9a;
+        margin:15px 0;
+    
+    }
+    .settings-links{
+        display:flex;
+        align-items: center;
+        margin: 15px 0;
+    
+    }
+    .settings-links .settings-icon{
+        width:38px;
+        margin-right: 10px;
+        border-radius: 50%;
+    }
+    .settings-links a{
+        display:flex;
+        flex:1;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        color:none;
+    
+    }
+    #dark-btn{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #ccc;
+        width:45px;
+        border-radius: 15px;
+        padding:2px 3px;
+        cursor: pointer;
+        display: flex;
+        transition: padding-left 0.5s, background 0.5s;
+    
+    
+    }
+    #dark-btn span{
+        width:18px;
+        height: 18px;
+        background: white;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    #dark-btn.dark-btn-on{
+        padding-left: 23px;
+        background: #9b9898;
+    
+    }
+    .settings-icon:hover{
+        color:rgb(0, 255, 47);
+    }
+    .raghava4477{
+        width:20px;
+    }
+    
+
+
+
+    </style>
+
+  </head>
+ 
+    <body>
+      <nav>
+        
+        <div class="nav-left">
+            <img src="logo.png" class="logo">
+            <ul>
+                <li><img src="https://media3.giphy.com/media/cL4VwGyAEP76FQV4vs/200.webp?cid=ecf05e47o6g40c4fj2zm7kipci27t7d8b0hlhmgznojnz7eh&ep=v1_stickers_search&rid=200.webp&ct=s" title="Notifications"></li>
+                <li><img src="data:image/png;base64,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" title="Messenger"></li>
+                <li><img src="video.png" title="To "></li>
+                
+            </ul>
+        
+        </div>
+        
+        <div class="nav-right">
+            <div class="search-box">
+                <img src="search.png" >
+                <input type="text" placeholder="search">
+            </div>
+            <div class="icon online" onclick="settingsMenuToggle()">
+                <img src="profile-pic.png">
+  
+            </div>
+  
+      </div>
+      <!------------------settings menu-------------->
+      <div class="settings-menu">
+          <div id="dark-btn">
+              <span></span>
+          </div>
+  
+  
+  
+  
+  
+          <div class="settings-menu-inner">
+              <div class="user-profile">
+                  <img src="profile-pic.png" onclick="alert('this feature not yet developed')">
+                  <div><br></br>
+                      <p title="User Profile">Raghava</p>
+                      <a href="#" onclick="alert('this feature not yet developed')">See your profile</a>
+                  </div>
+  
+                  <!--------------------------------------->
+              <img src="https://media.tenor.com/aeU-OjU2jF4AAAAj/ccc.gif" onclick="alert('this feature not yet developed')" class="raghava4447">
+              <div>
+                  <p title="User Profile">Simba</p>
+                  <a href="#" onclick="alert('this feature not yet developed')">See your Avathar</a>
+              </div>
+              <!----------------------------------------->
+  
+  
+                  
+              </div>
+  
+              
+  
+  
+  
+              <hr>
+      
+              <div class="user-profile">
+                  <img src="feedback.png" onclick="alert('this feature not yet developed')">
+                  <div>
+                      <p onclick="alert('this feature not yet developed')">Give Feedback</p>
+                      <a href="#" onclick="alert('this feature not yet developed')">Help us to improve new design</a>
+                  </div>
+              </div>
+              <hr>
+              <div class="settings-links">
+                  <img src="setting.png" class="settings-icon" onclick="alert('this feature not yet developed')">
+                  <a href="#" onclick="alert('this feature not yet developed')">Settings & Privacy<img src="arrow.png" width="5px"></a>
+              </div>
+              <div class="settings-links">
+                  <img src="help.png" class="settings-icon" onclick="alert('this feature not yet developed')">
+                  <a href="#" onclick="alert('this feature not yet developed')">Help & Support<img src="arrow.png" width="10px"></a>
+              </div>
+              <div class="settings-links">
+                  <img src="display.png" class="settings-icon" onclick="alert('this feature not yet developed')">
+                  <a href="#" onclick="alert('this feature not yet developed')">Display & Accessibility<img src="arrow.png" width="10px"></a>
+              </div>
+              <div class="settings-links">
+                  <img src="logout.png" class="settings-icon" onclick="alert('this feature not yet developed')">
+                  <a href="#" onclick="alert('this feature not yet developed')">Logout<img src="arrow.png" width="10px"></a>
+              </div>
+  
+  
+  
+  
+  
+  
+  
+          </div>
+         
+  
+      </div>
+      </nav>
+  
+      <div class="container">
+        <!----------left-sidebar---------------->
+        <div class="left-sidebar">
+            
+            <div class="imp-links">
+                <a href="#"><img src="https://media.tenor.com/aeU-OjU2jF4AAAAj/ccc.gif" title="User file"><h4 class="c2">PROFILE</h4></a>
+                <a href="#"><img src="group.png" title="Audio join"><h4 class="c1" >Join</h4></a>
+                <a href="#"><img src="news.png" title="Trendings in india/World"><h4 class="c1">Trendings</h4></a>
+            <a href="#"><img src="friends.png" title="Your close friends"><h4 class="c1">Close Friends</h4></a>
+  
+            <a href="#"><img src="marketplace.png" title="marketing"><h4 class="c1">Marketing</h4></a>
+            <a href="#"><img src="watch.png" title="Watch Clips"><h4 class="c1">Clips</h4></a>
+            <a href="#"><img src="watch.png" title="Create Clips"><h4 class="c1">Re-clips</h4></a>
+            <a href="#"><img src="feedback.png" title="give me feedback"><h4 class="c1">Feedback</h4></a>
+            <a href="#"><img src="help.png" title="problems solving"><h4 class="c1">Help?</h4></a>
+            <a href="#"><img src="setting.png" title="Settings"><h4 class="c1">Settings</h4></a>
+            
+            <a href="#">See More</a>
+            </div>
+            <div class="shortcuts-links">
+                <p>Your Shortcuts</p>
+                <a href="#"><img src="shortcut-1.png"><h4 class="c1">Web Developers</h4></a>
+                <a href="#"><img src="shortcut-2.png"><h4 class="c1">Web Design</h4></a>
+                <a href="#"><img src="shortcut-3.png"><h4 class="c1">FrontEnd Developers</h4></a>
+                <a href="#"><img src="shortcut-4.png"><h4 class="c1">Website Expert</h4></a>
+            </div>
+  
+        </div>
+        <!----------main content---------------->
+        <div class="main-content">
+            <div class="story-gallery">
+                <div class="story story1">
+                    <img src="https://media.tenor.com/aeU-OjU2jF4AAAAj/ccc.gif">
+                    <p>Post Story</p>
+                </div>
+                <div class="story story2">
+                    <img src="member-7.png"s>
+                    <p>Tim</p>
+                </div>
+                <div class="story story3">
+                    <img src="member-2.png">
+                    <p>Zuck</p>
+                </div>
+                <div class="story story4">
+                    <img src="member-3.png">
+                    <p>Satya</p>
+                </div>
+                <div class="story story5">
+                    <img src="member-4.png">
+                    <p>Elon Musk</p>
+                </div>
+            </div>
+        
+      <div class="post-write">
+        <div class="user-profile">
+            <img src="profile-pic.png">
+            <div class="">
+                <p title="User Profile">Raghava</p>
+                <small>Public</small>
+            </div>
+        </div>
+  
+      <div class="post-input">
+        <textarea  rows="3" placeholder="Write Text To Post">
+      Write Text To Post
+        </textarea>
+      <div class="add-post-links">
+        <a href="#"><img src="live-video.png">Live video</a>
+        <a href="#" onclick="alert('just seen the images by clicking the C text.')"><img src="photo.png"><input type="file" class="raghava4477">Photo/video</a>
+        <a href="#"><img src="feeling.png">feelings/Activity</a>
+        <button class="c3" title="Ready to Post" onclick="alert('Pic/Video post feature not developed')">Post</button>
+      </div>
+  
+      </div>
+  
+  
+  
+  
+  
+      </div>
+  
+      <div class="post-container">
+        <div class="post-row">
+            <div class="user-profile">
+                <img src="profile-pic.png">
+                <div class="">
+                    <p onclick="alert('Not Yet developed')" title="User Profile">Raghava</p>
+                    <span>August 15 2023, 14:47pm</span>
+                </div>
+            </div>
+  
+        </div>
+        
+        <p class="post-text">Helloo Guys.. How are you All ?</p>
+        <img src="feed-image-1.png" class="post-img">
+        <div class="post-row">
+            <div class="activity-icons">
+                <div><img src="like-blue.png">144k</div>
+                <div><img src="comments.png">124k</div>
+                <div><img src="share.png">104k</div>
+  
+            </div>
+            <div class="post-profile-icon">
+      <img src="profile.png">
+            </div>
+        </div>
+      </div>
+  
+      <!----------------------------->
+      <div class="post-container">
+        <div class="post-row">
+            <div class="user-profile">
+                <img src="member-2.png">
+                <div class="">
+                    <p onclick="alert('Not Yet developed')" title="User Profile">Vishnu</p>
+                    <span>August 15 2023, 14:47pm</span>
+                </div>
+            </div>
+  
+        </div>
+        
+        <p class="post-text"><font color="green">#naresh #viyaansh</font></p>
+        <img src="member-2.png" class="post-img">
+        <div class="post-row">
+            <div class="activity-icons">
+                <div><img src="like-blue.png">144k</div>
+                <div><img src="comments.png">124k</div>
+                <div><img src="share.png">104k</div>
+  
+            </div>
+            <div class="post-profile-icon">
+      <img src="profile.png">
+            </div>
+        </div>
+      </div>
+      <!--------------------------------->
+      <div class="post-container">
+        <div class="post-row">
+            <div class="user-profile">
+                <img src="member-2.png">
+                <div class="">
+                    <p onclick="alert('Not Yet developed')" title="User Profile">Teja</p>
+                    <span>August 15 2023, 14:47pm</span>
+                </div>
+            </div>
+           
+  
+        </div>
+        <p class="post-text">Beautiful Sky</p>
+        <img src="member-1.png" class="post-img">
+        <div class="post-row">
+            <div class="activity-icons">
+                <div><img src="like-blue.png">144k</div>
+                <div><img src="comments.png">124k</div>
+                <div><img src="share.png">204k</div>
+  
+            </div>
+            <div class="post-profile-icon">
+      <img src="member-2.png">
+            </div>
+        </div>
+      </div>
+      <!--------------------------------->
+      <div class="post-container">
+        <div class="post-row">
+            <div class="user-profile">
+                <img src="member-2.png">
+                <div class="">
+                    <p onclick="alert('Not Yet developed')" title="User Profile">Raghava1</p>
+                    <span>August 15 2023, 14:47pm</span>
+                </div>
+            </div>
+  
+        </div>
+        
+        <p class="post-text"><font color="green">#naresh #viyaansh</font></p>
+        <img src="profile-pic.png" class="post-img">
+        <div class="post-row">
+            <div class="activity-icons">
+                <div><img src="like-blue.png">144k</div>
+                <div><img src="comments.png">124k</div>
+                <div><img src="share.png">404k</div>
+  
+            </div>
+            <div class="post-profile-icon">
+      <img src="profile.png">
+            </div>
+        </div>
+      </div>
+      <!---------------------------------->
+      <div class="post-container">
+        <div class="post-row">
+            <div class="user-profile">
+                <img src="status-5.png">
+                <div class="">
+                    <p onclick="alert('Not Yet developed')" title="User Profile">Raghava2</p>
+                    <span>August 15 2023, 14:47pm</span>
+                </div>
+            </div>
+  
+        </div>
+        
+        <p class="post-text"><font color="green">#naresh #viyaansh</font></p>
+        <img src="profile.png" class="post-img">
+        <div class="post-row">
+            <div class="activity-icons">
+                <div><img src="like-blue.png">144k</div>
+                <div><img src="comments.png">124k</div>
+                <div><img src="share.png">904k</div>
+  
+            </div>
+            <div class="post-profile-icon">
+      <img src="profile.png">
+            </div>
+        </div>
+      </div>
+      <!---------------------------------->
+      <button type="button" class="load-more">Load More</button>
+  
+    </div>
+  
+  
+  
+        <!----------right-sidebar---------------->
+        <div class="right-sidebar">
+            
+            <div class="sidebar-title">
+                <h4>Events</h4>
+                <a href="#">See All</a>
+            </div>
+  
+      <div class="event">
+        <div class="left-event">
+      <h3>15</h3>
+      <span>August</span>
+        </div>
+        <div class="right-event">
+            <h4>HAPPY BIRTHDAY</h4>
+            <p>Raghava USA</p>
+            <a href="#">More Info</a>
+        </div>
+  
+      </div>
+      <div class="event">
+        <div class="left-event">
+      <h3>16</h3>
+      <span>October</span>
+        </div>
+        <div class="right-event">
+            <h4>HAPPY BIRTHDAY</h4>
+            <p>Raghava USA</p>
+            <a href="#">More Info</a>
+        </div>
+  
+      </div>
+      <div class="sidebar-title">
+        <h4>sponsored</h4>
+        <a href="#">Close</a>
+      </div>
+      <img src="advertisement.png" class="sidebar-ads" title="Ads">
+      <div class="sidebar-title">
+        <h4>Conversation</h4>
+        <a href="#">Hide chats</a>
+      </div>
+      <div class="online-list">
+        <div class="online">
+            <img src="member-1.png">
+        </div>
+        <p>The Girl</p>
+        
+          
+      </div>
+  
+      <div class="online-list">
+        <div class="online">
+            <img src="member-4.png">
+        </div>
+        <p>Raghava Dasari</p>
+      </div>
+      <div class="online-list">
+        <div class="online">
+            <img src="member-2.png">
+        </div>
+        <p>Raghava Dasari</p>
+      </div>
+      <div class="online-list">
+        <div class="online">
+            <img src="member-3.png">
+        </div>
+        <p>Viyaansh</p>
+      </div>
+      <div class="online-list">
+        <div class="online">
+            <img src="member-3.png">
+        </div>
+        <p>Viyaansh</p>
+      </div>
+        </div>
+      </div>
+      <div class="footer">
+          <p>Copyright 2024 - Raghava</p>
+      </div>
+
+  
+  
+        
+
+
+
+
+<!----------------------------------------------------->
+    <script>
+var settingsmenu = document.querySelector('.settings-menu');
+var darkBtn = document.getElementById('dark-btn');
+function settingsMenuToggle(){
+  settingsmenu.classList.toggle('settings-menu-height');
+
+}
+darkBtn.onclick = function(){
+  darkBtn.classList.toggle('dark-btn-on');
+  document.body.classList.toggle('dark-theme');
+  if(localStorage.getItem('theme')==='light'){
+    localStorage.setItem('theme','dark');
+  }
+  else{
+    localStorage.setItem('theme','light');
+  }
+
+
+
+}
+
+if(localStorage.getItem('theme')==='light'){
+  darkBtn.classList.remove('dark-btn-on');
+  document.body.classList.remove('dark-theme')
+}
+else if (localStorage.getItem('theme')==='light'){
+  darkBtn.classList.add('dark-btn-on');
+  document.body.classList.add('dark-theme')
+}
+else{
+  localStorage.setItem('theme','light');
+}
+
+
+
+
+localStorage.setItem('theme','dark');
+localStorage.getItem('theme');
+
+
+    </script>
+
+  </body>
+</html>

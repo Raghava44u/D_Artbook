@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right,rgb(243, 231, 163),pink,skyblue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: white;
+            border: 1px solid #dbdbdb;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow:2px 2px 5px 5px rgba(0,0,0,0.15) ;
+        }
+        .login-container:hover{
+            filter:drop-shadow(2px 2px 5px rgb(4, 247, 44));
+        }
+
+        h2 {
+            color: #262626;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #8e8e8e;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #232020;
+            border-radius: 10px;
+        }
+
+        button {
+            background: linear-gradient(to right,rgb(252, 212, 137),rgb(251, 180, 180),rgb(202, 247, 247));
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+           
+        }
+
+        .signup-link {
+            margin-top: 20px;
+            color: #fe0505;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+        .uname{
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login to Your Account</h2>
+        <center><img src="https://media.tenor.com/aeU-OjU2jF4AAAAj/ccc.gif"width="45"height="30"></center>
+        <form id="loginForm">
+            <label for="username" class="uname">Username:<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMmBOCvcnUJfhyDMoN-ZLnUhHvMoaDVq736w&usqp=CAU" width="45"height="40" align="right" id="speakButton"></label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password" class="uname">Password: <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMmBOCvcnUJfhyDMoN-ZLnUhHvMoaDVq736w&usqp=CAU" width="45"height="40" align="right" id="speakButton2"></label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" onclick="login()">Log In</button>
+        </form>
+
+        <div class="error-message" id="errorMessage"></div>
+
+        <a href="#" class="signup-link">Don't have an account? Sign up</a>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            
+            if (username === 'demo' && password === 'password') {
+                
+                localStorage.setItem('loggedInUser', username);
+                window.location.href ='file:///D:/Raghava/App%20(Product)/Desktop%20Demo/desktok%20demo/whole_demo.html';
+            } else {
+                document.getElementById('errorMessage').innerText = 'Invalid username or password';
+            }
+        }
+        
+        const speakButton = document.getElementById('speakButton');
+        const speakButton2 = document.getElementById('speakButton2');
+
+        const textToRead = "Hello, welcome to Artbook, In this place you can enter your UserName.";
+        const textToRead2 = "Hello, welcome to Artbook, In this place you can enter your Password.";
+        
+        const synth = window.speechSynthesis;
+        const synth2 = window.speechSynthesis;
+        function readText() {
+        
+          const raghava = new SpeechSynthesisUtterance(textToRead);
+        
+          synth.speak(raghava);
+        }
+        function readText2() {
+        
+            const raghava2 = new SpeechSynthesisUtterance(textToRead2);
+          
+            synth.speak(raghava2);
+          }
+        
+        speakButton.addEventListener('click', readText);
+        speakButton.addEventListener('click', readText2);        
+    </script>
+</body>
+</html>

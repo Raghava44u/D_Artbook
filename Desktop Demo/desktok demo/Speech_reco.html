@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixed Voice Reader</title>
+</head>
+<body>
+  <h1>Fixed Voice Reader</h1>
+  <button id="speakButton">Speak</button>
+  <script>
+    
+const speakButton = document.getElementById('speakButton');
+
+const textToRead = "Hello, welcome to the fixed voice reader. This is an example of a fixed text being read out loud.";
+
+const synth = window.speechSynthesis;
+function readText() {
+
+  const raghava = new SpeechSynthesisUtterance(textToRead);
+
+  synth.speak(raghava);
+}
+
+speakButton.addEventListener('click', readText);
+
+  </script>
+</body>
+</html>

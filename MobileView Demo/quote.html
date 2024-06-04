@@ -1,0 +1,233 @@
+<html>
+    <head>
+        <style>
+.robo{
+   padding:4px;
+  
+}
+.msg{
+    width:150px;
+    background-color: rgb(232, 136, 242);
+    color:white;
+    padding:10px;
+    border-radius: 20px;
+    font-style: oblique;
+    align-items: center;
+    text-align: center;
+}
+.search{
+    width:340px;
+    padding: 10px;
+    border-radius: 20px;
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.TKSgUyJrZCW6BheXSgzCkQHaHa%26pid%3DApi&f=1&ipt=0c9860873892fb98589c9c540494244af11a42db0aa9f0f5e4a927f357016ef2&ipo=images");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.msg:hover{
+    background-color: rgb(234, 99, 249);
+    color:white;
+}
+.home{
+    width:60px;
+    height: 40;
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.PW5euOUwGtiKSX20WyUSogHaHa%26pid%3DApi&f=1&ipt=7d3bde82e9db7b0ba283a1aa4101a02911f49fbc457e8351e311e349caee05e2&ipo=images");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% ;
+    border-radius: 20px;
+ }
+ .clips{
+    width:60px;
+    height: 40;
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.explicit.bing.net%2Fth%3Fid%3DOIP.hQa19APuP90qePWDs5YURgHaFj%26pid%3DApi&f=1&ipt=3ed1efab3f18821568e32a84860e6730e9812314920ccb2e26d7ac6674a30005&ipo=images");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:50% ;
+    border-radius: 20px;
+ }
+ .note{
+    width:60px;
+    height: 40;
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.OhL4TNTxtEFuujZKeIZB7gHaHa%26pid%3DApi&f=1&ipt=48469c2239783f1ca76594118f3fdd340d3db9ea99534f2b83ae6d5286f6b883&ipo=images");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% ;
+    border-radius: 20px;
+   
+ }
+ .notifications{
+    width:60px;
+    height: 40;
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Pc0EZw4ei_nJfmQd0ouWlQHaDd%26pid%3DApi&f=1&ipt=8f562865e43ad0dd2fb99f1db66f4da6c40826535ada90345b04f257f5a1b17a&ipo=images");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% ;
+    border-radius: 20px;
+ }
+ .email{
+    width:60px;
+    height: 40;
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.bq_HmPjG0NpXg0F30A84BgHaHa%26pid%3DApi&f=1&ipt=974e4f798854006ad5b0d291dec0b5f3cbaa79e4ff9149a6778bcd62bd32425f&ipo=images");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% ;
+    border-radius: 20px;
+ }
+ .text{
+    width: 340px;
+    padding:120px;
+    border-radius:10px ;
+    border-color: rgb(0, 255, 21);
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.bijhIQPLIU1_5QjQXqIjxgAAAA%26pid%3DApi&f=1&ipt=fc53c4a0f1db9eea9a7ce5093b6d87292dfe135a9fe41708713d7b6c432b840a&ipo=images");
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+ .red{
+    background-color: rgb(44, 219, 219);
+ }
+ .a7{
+    background-color: royalblue;
+    color:white;
+    width:60px;
+    border-radius: 20px;
+    padding: 7px;
+ }
+  .submenu {
+    display: none;
+    text-decoration: none;
+  }
+  .menu ul li:hover .submenu{
+    display:block;
+    position:absolute;
+    background-color:white ;
+    margin-top:15px;
+margin-left: -15px;
+color:red;
+text-decoration: none;
+ }
+ .menu ul li:hover .submenu ul {
+    display:block;
+    margin:10px;
+    text-decoration: none;
+ }
+.menu ul li a {
+    text-decoration: none;
+    font-size: 20;
+    background-color: azure;
+    border-radius: 20px;
+    width:40px;
+}
+.menu ul li:hover .submenu ul li{
+    width:10px;
+    padding: 4px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+    text-decoration: none;
+}
+.div{
+    background-color: azure;
+ background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.-Lb9KdNed0s_AtmFN6c0HQHaEe%26pid%3DApi&f=1&ipt=b3af7fc9a5f137ea84d8e6f00007416e5d68c0b43a85501d2b19822ac06d5adf&ipo=images");
+ background-repeat: no-repeat;
+ background-size: contain;
+ background-position: center;
+}
+
+
+
+
+.rowli{
+    width:340px;
+    padding:12px;
+    border-radius: 20px;
+    background-image:src("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.TKSgUyJrZCW6BheXSgzCkQHaHa%26pid%3DApi&f=1&ipt=8e9c4c342010431030f820423c24cf6ef6019e58c7958603dbb01e755ab9aad4&ipo=images");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.raghava2{
+    width:80px;
+    padding:6px;
+    min-height: 0vh;
+    background-color: rgb(251, 152, 169);
+    color:black;
+    border-radius: 10px;
+}
+.raghava2:hover{
+    background-color: deeppink;
+    color:#fff;
+}
+.mosam{
+align-items:end;
+text-align:left;
+text-shadow: rgb(11, 10, 10);
+display: grid;
+
+}
+.green{
+    width:20px;
+    padding:9px;
+    border-radius: 30%;
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.wdXiTSVHtq3bOo5UosuhWQHaNY%26pid%3DApi&f=1&ipt=50d0c302af8d0300352f27995416512e2810ef5c7b89289f40425d4c7a90e366&ipo=images");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+.option{
+    background-color: rgb(235, 131, 245);
+    color:#fff;
+    font-size: 20;
+}
+.option1{
+    padding:10px;
+    background-color: rgb(104, 236, 71);
+    color:black;
+    font-size: 17;
+}
+        </style>
+    </head>
+    <body>
+        <center>
+        <table border="1px">
+            <tr>
+                <td>
+<span class="robo">
+    <div class="div">
+   <div align="right"> <button class="a7">DONE </button></div><br>
+   
+</div>
+      <div>
+        <input type="text" class="rowli" placeholder="           J.K Rowling">
+      </div>
+      <div align="left">
+        <select class="green">
+            <option value="red" class="option">Location</option>
+            <option value="green" class="option">mentions</option>
+            <option value="white" class="option">pin</option>
+            <option value="pink" class="option">Tags</option>
+            <option value="pink" class="option">more</option>
+                    </select> 
+                </div>
+    <div align="center">
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.bijhIQPLIU1_5QjQXqIjxgAAAA%26pid%3DApi&f=1&ipt=fc53c4a0f1db9eea9a7ce5093b6d87292dfe135a9fe41708713d7b6c432b840a&ipo=images" width="140" class="red"> <br>
+
+<div align="left"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.mY1fa_G-v8f2K8WiLbGONAHaCx%26pid%3DApi&f=1&ipt=7848cea505a4bac3b45774172ec22ea9355141ecf4101dda461ea70b24102cc8&ipo=images" width="150" class="a2"></div>
+<hr>
+<div align="">   <select class="msg">
+    <option value="red" class="option1">EDIT</option>
+    <option value="green" class="option1">CROP</option>
+    <option value="white" class="option1">Music</option>
+    <option value="pink" class="option1">Add Photo</option>
+    <option value="pink" class="option1">Emojis</option>
+    <option value="pink" class="option1">Gifs</option>
+            </select>   <button class="msg">Post also in Feed</button></div><br>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.aJ0Wn-S-bouheVUYP1V-YAHaHa%26pid%3DApi&f=1&ipt=f268710cd2442ef05512fb725bc345cbe03b890fc546d18adf45ee75727b5aba&ipo=images"width=80><br><br><br><br><br><br>
+<br>
+   <a href="file:///D:/Raghava/Projects/ARTBOOK/news.html" > <button class="home"></button></a>  <a href="file:///D:/Raghava/Projects/ARTBOOK/search1.html"><button class="clips"></button></a> <button class="note"></button> <a href="file:///D:/Raghava/Projects/ARTBOOK/noti.html"> <button class="notifications"></button></a>   <a href="file:///D:/Raghava/Projects/ARTBOOK/mail1.html"><button class="email"></button></a>
+</span>
+                </td>
+            </tr>
+        </table>
+        </center>
+    </body>
+</html>
